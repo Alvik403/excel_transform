@@ -1,0 +1,11 @@
+services:
+  excel-processor:
+    build: .
+    container_name: excel-formula-processor
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./temp:/app/temp
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
